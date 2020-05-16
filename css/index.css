@@ -93,20 +93,21 @@ html {
   font-size: 62.5%;
   height: 100vh;
 }
+* {
+  box-sizing: border-box;
+}
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: #222;
   padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 @media (max-width: 600px) {
   body {
     padding: 0;
   }
-}
-* {
-  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -208,4 +209,9 @@ nav > a.navCurrent {
   .flexRowDesktop > section {
     width: 50%;
   }
+}
+footer,
+header,
+nav a {
+  border-left: 0.1rem solid #aaa;
 }
