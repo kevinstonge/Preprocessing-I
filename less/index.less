@@ -14,9 +14,10 @@
 @bg0: #222;
 @bg1: #333;
 @bg2: #444;
-@fg0: #aaa;
-@fg1: #bbb;
-@fg2: #ccc;
+@fg0: #bbb;
+@fg1: #ccc;
+@fg2: #ddd;
+@fg3: #eee;
 @font1: 'Courier New', Courier, monospace;
 
 body {
@@ -26,7 +27,7 @@ body {
 	background-color: @bg0;
 	padding: 1rem;
 	font-family: @font1;
-	@media (max-width: 600px) { 
+	@media (max-width: 500px) { 
 		padding: 0;
 	}
 }
@@ -39,15 +40,17 @@ footer, header, hgroup, menu, nav, section {
 header { 
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 }
 h1 {
+	color: @fg3;
 	font-size: 2.2rem;
 }
 h2 { font-size: 2.0rem; }
 h1,h2 { 
 	color: @fg1; 
 	font-weight: bold; 
-	border-bottom: 1px dotted @fg1; 
+	border-bottom: 0.1rem dashed @fg1; 
 	display: inline-block;
 	margin-bottom: 1rem; 
 }
@@ -71,7 +74,7 @@ table {
 }
 tbody>tr:nth-child(odd) {background-color: @bg1;}
 th,td {
-	border-bottom: 1px solid @fg1;
+	border-bottom: 0.1rem solid @fg1;
 }
 
 nav {
@@ -80,11 +83,16 @@ nav {
 	justify-content: flex-end;
 	padding: 0;
 }
-nav>a {
+nav>a, button {
 	padding: 1rem;
 	background-color: @bg1;
 	margin-left: 1rem;
 }
+
+button { outline: none; border: 0; margin: 0.5rem 0; color: @fg1; background-color: @bg1; }
+button:focus { outline: 0.1rem dashed @fg1; }
+button:hover { outline: 0.1rem dashed @fg1; }
+
 
 header,footer,nav>a.navCurrent {
 	background-color: @bg2;
@@ -93,12 +101,12 @@ header,footer,nav>a.navCurrent {
 .flexRowDesktop {
 	display: flex;
 	flex-direction: column;
-	@media (min-width: 600px) {
+	@media (min-width: 500px) {
 		flex-direction: row;
 		justify-content: stretch;
 	}
 	>section {
-		@media (min-width: 600px) {
+		@media (min-width: 500px) {
 			width: 50%;
 		}
 	}

@@ -104,7 +104,7 @@ body {
   padding: 1rem;
   font-family: 'Courier New', Courier, monospace;
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   body {
     padding: 0;
   }
@@ -127,8 +127,10 @@ section {
 header {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 h1 {
+  color: #eee;
   font-size: 2.2rem;
 }
 h2 {
@@ -136,9 +138,9 @@ h2 {
 }
 h1,
 h2 {
-  color: #bbb;
+  color: #ccc;
   font-weight: bold;
-  border-bottom: 1px dotted #bbb;
+  border-bottom: 0.1rem dashed #ccc;
   display: inline-block;
   margin-bottom: 1rem;
 }
@@ -148,7 +150,7 @@ li,
 th,
 td {
   font-size: 1.6rem;
-  color: #bbb;
+  color: #ccc;
 }
 th {
   font-weight: bold;
@@ -177,7 +179,7 @@ tbody > tr:nth-child(odd) {
 }
 th,
 td {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 0.1rem solid #ccc;
 }
 nav {
   display: flex;
@@ -185,10 +187,24 @@ nav {
   justify-content: flex-end;
   padding: 0;
 }
-nav > a {
+nav > a,
+button {
   padding: 1rem;
   background-color: #333;
   margin-left: 1rem;
+}
+button {
+  outline: none;
+  border: 0;
+  margin: 0.5rem 0;
+  color: #ccc;
+  background-color: #333;
+}
+button:focus {
+  outline: 0.1rem dashed #ccc;
+}
+button:hover {
+  outline: 0.1rem dashed #ccc;
 }
 header,
 footer,
@@ -199,13 +215,13 @@ nav > a.navCurrent {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .flexRowDesktop {
     flex-direction: row;
     justify-content: stretch;
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .flexRowDesktop > section {
     width: 50%;
   }
@@ -213,5 +229,5 @@ nav > a.navCurrent {
 footer,
 header,
 nav a {
-  border-left: 0.1rem solid #aaa;
+  border-left: 0.1rem solid #bbb;
 }
