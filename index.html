@@ -20,19 +20,51 @@
  Content: Contact - Provide some way a potential employer could contact you. Phone number, email, or a full on contact form (doesn't have to work) -->
 
 <body>
+
   <nav>
     <a href="#" class="navActive">Home</a>
-    <a href="skills.html">Skills</a>
-    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
+
   <header>
-    <img src="kevin.jpg">
+    <img src="headerImg.jpg">
     <h1>Kevin St.Onge</h1>
     <h2>Full Stack Web Developer</h2>
     <p>lorem ipsum</p>
     <p><a href="contact.html">Contact me!</a></p>
   </header>
-  <h1>My Resume</h1>
+
+  <div id="flexRowDesktop">
+    <section>
+      <h2>Intro</h2>
+      <p>lorem ipsum</p>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <div id="skillsList">
+        <ul>
+          <li>HTML5 (semantic, accessible)</li>
+          <li>CSS3 (css less)</li>
+          <li>JavaScript</li>
+          <li>ReactJS</li>
+          <li>NodeJS</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <h2>Work History</h2>
+    <table>
+      <thead>
+        <th>Company</th><th>Title</th><th>Tech Used</th>
+        <td>Google</td><td>CEO</td><td>JavaScript</td>
+        <td>Amazon</td><td>CFO</td><td>AWS</td>
+        <td>Netflix</td><td>Janitor</td><td>Soap</td>
+      </thead>
+    </table>
+  </section>
 </body>
 </html>
