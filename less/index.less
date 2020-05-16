@@ -3,7 +3,12 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@bg0: #222;
+@bg1: #333;
+@bg2: #444;
+@fg1: #bbb;
+@fg2: #ccc;
+@fg3: #ddd;
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,38 +27,94 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%;
+	height: 100vh;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background-color: @bg0;
+	padding: 1rem;
+	@media (max-width: 600px) { 
+		padding: 0;
+	}
+}
+* {
+    box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: inline-block;
+	padding: 1rem;
 }
-body {
-	line-height: 1;
+header { 
+	display: flex;
+	flex-direction: column;
 }
-ol, ul {
+h1 {
+	font-size: 2.2rem;
+}
+h2 { font-size: 2.0rem; }
+h1,h2 { 
+	color: @fg1; 
+	font-weight: bold; 
+	border-bottom: 1px dotted @fg1; 
+	display: inline-block;
+	margin-bottom: 1rem; 
+}
+a,p,li,th,td { font-size: 1.6rem; color: @fg1; }
+th { font-weight: bold; text-align: left;}
+a { text-decoration: none; }
+ol,ul {
 	list-style: none;
 }
-blockquote, q {
-	quotes: none;
+li:nth-child(odd) {
+	background-color: @bg2;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
+
 table {
+	width: 100%;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.tableSection {
+	overflow-x: auto;
+}
+tbody>tr:nth-child(odd) {background-color: @bg1;}
+th,td {
+	border-bottom: 1px solid @fg1;
 }
 
-html, body {
-    height: 100%;
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding: 0;
+}
+nav>a {
+	padding: 1rem;
+	background-color: @bg1;
+	margin-left: 1rem;
 }
 
+header,footer,nav>a.navCurrent {
+	background-color: @bg2;
+}
+
+.flexRowDesktop {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: 600px) {
+		flex-direction: row;
+		justify-content: stretch;
+	}
+	>section {
+		@media (min-width: 600px) {
+			width: 50%;
+		}
+	}
+}

@@ -22,7 +22,7 @@
 <body>
 
   <nav>
-    <a href="#" class="navActive">Home</a>
+    <a href="#" class="navCurrent">Home</a>
     <a href="about.html">About</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
@@ -36,7 +36,7 @@
     <p><a href="contact.html">Contact me!</a></p>
   </header>
 
-  <div id="flexRowDesktop">
+  <div class="flexRowDesktop">
     <section>
       <h2>Intro</h2>
       <p>lorem ipsum</p>
@@ -55,16 +55,29 @@
     </section>
   </div>
 
-  <section>
+  <section class="tableSection">
     <h2>Work History</h2>
     <table>
       <thead>
-        <th>Company</th><th>Title</th><th>Tech Used</th>
-        <td>Google</td><td>CEO</td><td>JavaScript</td>
-        <td>Amazon</td><td>CFO</td><td>AWS</td>
-        <td>Netflix</td><td>Janitor</td><td>Soap</td>
+        <tr>
+          <th>Company</th><th>Title</th><th>Tech Used</th>
+        </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>Google</td><td>CEO</td><td>JavaScript</td>
+        </tr>
+        <tr>
+          <td>Amazon</td><td>CFO</td><td>AWS</td>
+        </tr>
+        <tr>
+          <td>Netflix</td><td>Janitor</td><td>Soap</td>
+        </tr>
+      </tbody>
     </table>
   </section>
+  <footer>
+    <p>footer text</p>
+  </footer>
 </body>
 </html>
