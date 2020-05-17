@@ -4,114 +4,127 @@
    License: none (public domain)
 */
 @import "reset";
-
-
-// Variables: Incorporate variables in your project for color and font stacks.
-//  Nesting: Every selector should be nested inside the main container. Avoid having global styles unless they are element level.
-//  Mixins: Create 2 mixins of your choosing. Hint: It's super helpful to use flexbox properties in mixins
-//  Mobile: Use nested-at rules to provide a mobile version of your resume. Use 500px as a max-width for mobile.
-
-@bg0: #222;
-@bg1: #333;
-@bg2: #444;
-@fg0: #bbb;
-@fg1: #ccc;
-@fg2: #ddd;
-@fg3: #eee;
-@font1: 'Courier New', Courier, monospace;
+@import "variables";
+@import "mixins";
 
 body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	background-color: @bg0;
-	padding: 1rem;
-	font-family: @font1;
-	@media (max-width: 500px) { 
+	.flexColumn;
+	background-color: #colors[bg0];
+	padding: #spaces[lg];
+	font-family: #fonts[f1];
+	color: #colors[fg1];
+	@media (max-width: calc(50rem * 0.625)) { 
 		padding: 0;
 	}
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: inline-block;
-	padding: 1rem;
-}
-header { 
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-}
-h1 {
-	color: @fg3;
-	font-size: 2.2rem;
-}
-h2 { font-size: 2.0rem; }
-h1,h2 { 
-	color: @fg1; 
-	font-weight: bold; 
-	border-bottom: 0.1rem dashed @fg1; 
-	display: inline-block;
-	margin-bottom: 1rem; 
-}
-a,p,li,th,td { font-size: 1.6rem; color: @fg1; }
-th { font-weight: bold; text-align: left;}
-a { text-decoration: none; }
-ol,ul {
-	list-style: none;
-}
-li:nth-child(odd) {
-	background-color: @bg2;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-.tableSection {
-	overflow-x: auto;
-}
-tbody>tr:nth-child(odd) {background-color: @bg1;}
-th,td {
-	border-bottom: 0.1rem solid @fg1;
-}
-
-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	padding: 0;
-}
-nav>a, button {
-	padding: 1rem;
-	background-color: @bg1;
-	margin-left: 1rem;
-}
-
-button { outline: none; border: 0; margin: 0.5rem 0; color: @fg1; background-color: @bg1; }
-button:focus { outline: 0.1rem dashed @fg1; }
-button:hover { outline: 0.1rem dashed @fg1; }
-
-
-header,footer,nav>a.navCurrent {
-	background-color: @bg2;
-}
-
-.flexRowDesktop {
-	display: flex;
-	flex-direction: column;
-	@media (min-width: 500px) {
-		flex-direction: row;
-		justify-content: stretch;
+	header,footer,nav>a.navCurrent {
+		background-color: #colors[bg2];
 	}
-	>section {
-		@media (min-width: 500px) {
-			width: 50%;
+	a,p,li,th,td { 
+		font-size: #fontSizes[sm]; 
+		color: #colors[fg1]; 
+	}
+	a { text-decoration: none; }
+	h1 { 
+		font-size: #fontSizes[lg]; 
+		color: #colors[em0];
+		margin-top: #spaces[lg];
+	}
+	h2 { 
+		font-size: #fontSizes[med];
+		border-bottom: 0.1rem dashed #colors[fg1]; /* vscode doesnt' like #spaces[sm] here */
+	}
+	h1,h2 { 
+		font-weight: bold; 
+		display: inline-block;
+		margin-bottom: #spaces[lg]; 
+	}
+	button { 
+		outline: none; 
+		border: 0; 
+		margin: 0.5rem 0; 
+		color: #colors[fg1]; 
+		background-color: #colors[bg1]; 
+		font-family: #fonts[f1];
+		&:focus,&:hover {
+			outline: 0.1rem dashed #colors[em0];
+			font-weight: bold;
 		}
 	}
+	.flexRowDesktop {
+		.flexRow;
+		justify-content: stretch;
+		@media (max-width: calc(50rem * 0.625)) {
+			.flexColumn;
+			justify-content: flex-start;
+		}
+		>section {
+			width: 50%;
+			@media (max-width: calc(50rem * 0.625)) {
+				width: 100%;
+			}
+		}
+	}
+	footer,header,nav>a {
+		border-left: 0.1rem solid #colors[fg0];
+	}
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		padding: 0;
+		>a:hover:not(.navCurrent) {
+			font-weight: bold;
+		}
+		>a:focus {
+			font-weight: bold;
+			border: 0.1rem dashed #colors[em0];	
+		}
+		>.navCurrent:hover {
+			cursor: default;
+		}
+	}
+	nav>a, button {
+		padding: #spaces[lg];
+		background-color: #colors[bg1];
+	}
+	nav>a { margin-left: #spaces[med]; }
+	header { 
+		.flexColumn;
+		align-items: flex-start;
+		img {
+			width: 20rem;
+		}
+	}
+	section {
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			th { 
+				font-weight: bold; 
+				text-align: left;
+			}
+		}
+		ol,ul {
+			list-style: none;
+		}
+		li:nth-child(odd),table>tbody>tr:nth-child(odd) {
+			background-color: #colors[bg1];
+		}
+	}
+	.tableSection {
+		overflow-x: auto;
+	}
 }
 
-footer,header,nav a {
-	border-left: 0.1rem solid @fg0;
-}
+
+
+
+
+
+
+
+
+
+
+

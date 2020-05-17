@@ -96,19 +96,6 @@ html {
 * {
   box-sizing: border-box;
 }
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #222;
-  padding: 1rem;
-  font-family: 'Courier New', Courier, monospace;
-}
-@media (max-width: 500px) {
-  body {
-    padding: 0;
-  }
-}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -123,111 +110,148 @@ nav,
 section {
   display: inline-block;
   padding: 1rem;
+  /* move */
 }
-header {
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+.flexColumn {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
-h1 {
-  color: #eee;
-  font-size: 2.2rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h1,
-h2 {
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
   color: #ccc;
-  font-weight: bold;
-  border-bottom: 0.1rem dashed #ccc;
-  display: inline-block;
-  margin-bottom: 1rem;
 }
-a,
-p,
-li,
-th,
-td {
+@media (max-width: calc(50rem * 0.625)) {
+  body {
+    padding: 0;
+  }
+}
+body header,
+body footer,
+body nav > a.navCurrent {
+  background-color: #444;
+}
+body a,
+body p,
+body li,
+body th,
+body td {
   font-size: 1.6rem;
   color: #ccc;
 }
-th {
-  font-weight: bold;
-  text-align: left;
-}
-a {
+body a {
   text-decoration: none;
 }
-ol,
-ul {
-  list-style: none;
+body h1 {
+  font-size: 2.2rem;
+  color: #8E7;
+  margin-top: 1rem;
 }
-li:nth-child(odd) {
-  background-color: #444;
+body h2 {
+  font-size: 2rem;
+  border-bottom: 0.1rem dashed #ccc;
+  /* vscode doesnt' like #spaces[sm] here */
 }
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+body h1,
+body h2 {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
-.tableSection {
-  overflow-x: auto;
-}
-tbody > tr:nth-child(odd) {
-  background-color: #333;
-}
-th,
-td {
-  border-bottom: 0.1rem solid #ccc;
-}
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 0;
-}
-nav > a,
-button {
-  padding: 1rem;
-  background-color: #333;
-  margin-left: 1rem;
-}
-button {
+body button {
   outline: none;
   border: 0;
   margin: 0.5rem 0;
   color: #ccc;
   background-color: #333;
+  font-family: 'Courier New', Courier, monospace;
 }
-button:focus {
-  outline: 0.1rem dashed #ccc;
+body button:focus,
+body button:hover {
+  outline: 0.1rem dashed #8E7;
+  font-weight: bold;
 }
-button:hover {
-  outline: 0.1rem dashed #ccc;
+body .flexRowDesktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
 }
-header,
-footer,
-nav > a.navCurrent {
-  background-color: #444;
+@media (max-width: calc(50rem * 0.625)) {
+  body .flexRowDesktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
-.flexRowDesktop {
+body .flexRowDesktop > section {
+  width: 50%;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body .flexRowDesktop > section {
+    width: 100%;
+  }
+}
+body footer,
+body header,
+body nav > a {
+  border-left: 0.1rem solid #bbb;
+}
+body nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0;
+}
+body nav > a:hover:not(.navCurrent) {
+  font-weight: bold;
+}
+body nav > a:focus {
+  font-weight: bold;
+  border: 0.1rem dashed #8E7;
+}
+body nav > .navCurrent:hover {
+  cursor: default;
+}
+body nav > a,
+body button {
+  padding: 1rem;
+  background-color: #333;
+}
+body nav > a {
+  margin-left: 0.5rem;
+}
+body header {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
-@media (min-width: 500px) {
-  .flexRowDesktop {
-    flex-direction: row;
-    justify-content: stretch;
-  }
+body header img {
+  width: 20rem;
 }
-@media (min-width: 500px) {
-  .flexRowDesktop > section {
-    width: 50%;
-  }
+body section table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-footer,
-header,
-nav a {
-  border-left: 0.1rem solid #bbb;
+body section table th {
+  font-weight: bold;
+  text-align: left;
+}
+body section ol,
+body section ul {
+  list-style: none;
+}
+body section li:nth-child(odd),
+body section table > tbody > tr:nth-child(odd) {
+  background-color: #333;
+}
+body .tableSection {
+  overflow-x: auto;
 }
