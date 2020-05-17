@@ -22,7 +22,7 @@ body {
 		background-color: #colors[bg2];
 	}
 	nav>a.navCurrent {
-		border-bottom: 0.1rem solid #colors[bg2];
+		border-bottom: #spaces[sm] solid #colors[bg2];
 	}
 	a,p,li,th,td { 
 		font-size: #fontSizes[sm]; 
@@ -54,9 +54,9 @@ body {
 		color: #colors[fg1]; 
 		background-color: #colors[bg1]; 
 		font-family: #fonts[f1];
-		border-left: 0.1rem solid #colors[fg0];
+		border-left: #spaces[sm] solid #colors[fg0];
 		&:focus,&:hover {
-			outline: 0.1rem dashed #colors[em0];
+			outline: #spaces[sm] dashed #colors[em0];
 			font-weight: bold;
 		}
 	}
@@ -75,7 +75,7 @@ body {
 		}
 	}
 	footer,header,nav>a {
-		border-left: 0.1rem solid #colors[fg0];
+		border-left: #spaces[sm] solid #colors[fg0];
 	}
 	footer { text-align: right; }
 	nav {
@@ -88,7 +88,7 @@ body {
 		}
 		>a:focus {
 			font-weight: bold;
-			border: 0.1rem dashed #colors[em0];	
+			border: #spaces[sm] dashed #colors[em0];	
 		}
 		>.navCurrent:hover {
 			cursor: default;
@@ -100,7 +100,7 @@ body {
 	}
 	nav>a { 
 		margin-left: #spaces[med];
-		border: 0.1rem solid #colors[bg1]
+		border: #spaces[sm] solid #colors[bg1]
 	}
 	header { 
 		.flexColumn;
@@ -116,7 +116,7 @@ body {
 	}
 	section {
 		table {
-			border-left: 0.1rem dashed #colors[fg0];
+			border-left: #spaces[sm] dashed #colors[fg0];
 			width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -131,7 +131,7 @@ body {
 		}
 		ol,ul {
 			list-style: none;
-			border-left: 0.1rem dashed #colors[fg0];
+			border-left: #spaces[sm] dashed #colors[fg0];
 		}
 		li {
 			padding: #spaces[sm];
@@ -141,8 +141,8 @@ body {
 			background-color: #colors[bg1];
 		}
 		.gallery {
-			border-left: 0.1rem solid #colors[fg1];
-			padding: 0 1rem;
+			border-left: #spaces[sm] solid #colors[fg1];
+			padding: #spaces[sm];
 			.flexRow;
 			justify-content: space-evenly;
 			flex-wrap: wrap;

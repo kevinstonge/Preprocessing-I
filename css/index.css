@@ -285,7 +285,7 @@ body section table > tbody > tr:nth-child(odd) {
 }
 body section .gallery {
   border-left: 0.1rem solid #ccc;
-  padding: 0 1rem;
+  padding: 0.1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
