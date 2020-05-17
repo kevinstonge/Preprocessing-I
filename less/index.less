@@ -8,6 +8,8 @@
 @import "mixins";
 
 body {
+	max-width: 80rem;
+	margin: 0 auto;
 	.flexColumn;
 	background-color: #colors[bg0];
 	padding: #spaces[lg];
@@ -19,10 +21,14 @@ body {
 	header,footer,nav>a.navCurrent {
 		background-color: #colors[bg2];
 	}
+	nav>a.navCurrent {
+		border-bottom: 0.1rem solid #colors[bg2];
+	}
 	a,p,li,th,td { 
 		font-size: #fontSizes[sm]; 
 		color: #colors[fg1]; 
 	}
+	p:not(:nth-last-child(1)) { margin-bottom: #spaces[lg]; }
 	a { text-decoration: none; }
 	h1 { 
 		font-size: #fontSizes[lg]; 
@@ -31,7 +37,10 @@ body {
 	}
 	h2 { 
 		font-size: #fontSizes[med];
-		border-bottom: 0.1rem dashed #colors[fg1]; /* vscode doesnt' like #spaces[sm] here */
+	}
+	h3 {
+		font-size: #fontSizes[med];
+		font-weight: lighter;
 	}
 	h1,h2 { 
 		font-weight: bold; 
@@ -41,10 +50,11 @@ body {
 	button { 
 		outline: none; 
 		border: 0; 
-		margin: 0.5rem 0; 
+		margin: 1rem 0 0 0; 
 		color: #colors[fg1]; 
 		background-color: #colors[bg1]; 
 		font-family: #fonts[f1];
+		border-left: 0.1rem solid #colors[fg0];
 		&:focus,&:hover {
 			outline: 0.1rem dashed #colors[em0];
 			font-weight: bold;
@@ -67,6 +77,7 @@ body {
 	footer,header,nav>a {
 		border-left: 0.1rem solid #colors[fg0];
 	}
+	footer { text-align: right; }
 	nav {
 		display: flex;
 		flex-direction: row;
@@ -84,19 +95,28 @@ body {
 		}
 	}
 	nav>a, button {
-		padding: #spaces[lg];
+		padding: #spaces[med] #spaces[lg];
 		background-color: #colors[bg1];
 	}
-	nav>a { margin-left: #spaces[med]; }
+	nav>a { 
+		margin-left: #spaces[med];
+		border: 0.1rem solid #colors[bg1]
+	}
 	header { 
 		.flexColumn;
 		align-items: flex-start;
-		img {
-			width: 20rem;
+	}
+	img {
+		width: 20rem;
+		filter: grayscale(100%);
+		transition: filter 1s;
+		&:hover {
+			filter: unset;
 		}
 	}
 	section {
 		table {
+			border-left: 0.1rem dashed #colors[fg0];
 			width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -104,12 +124,66 @@ body {
 				font-weight: bold; 
 				text-align: left;
 			}
+			td,th {
+				padding: #spaces[sm];
+				padding-left: #spaces[lg];
+			}
 		}
 		ol,ul {
 			list-style: none;
+			border-left: 0.1rem dashed #colors[fg0];
 		}
-		li:nth-child(odd),table>tbody>tr:nth-child(odd) {
+		li {
+			padding: #spaces[sm];
+			padding-left: #spaces[lg];
+		}
+		li:nth-child(even),table>tbody>tr:nth-child(odd) {
 			background-color: #colors[bg1];
+		}
+		.gallery {
+			border-left: 0.1rem solid #colors[fg1];
+			padding: 0 1rem;
+			.flexRow;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+			align-items: center;
+			>.galleryItem {
+				max-width: 20rem;
+				text-align: center;
+				padding: #spaces[med];
+				.flexColumn;
+				&:hover {
+					h3 { font-weight: bold; }
+				}
+
+			}
+		}
+		form {
+			input,textarea {
+				background-color: #colors[bg1];
+				color: #colors[fg2];
+				padding: #spaces[med];
+				outline: none;
+				border: #spaces[sm] solid #colors[fg0];
+				&:focus {
+					border: #spaces[sm] dashed #colors[em0];
+				}
+			}
+			label {
+				&:nth-child(1) { margin-bottom: 1rem; }
+				p { width: 30%; text-align: right; }
+				input,textarea { width: 70%; margin-left: 1rem;}
+				textarea { height: 12rem; }
+				.flexRow;
+				@media (max-width: calc(50rem * 0.625)) {
+					.flexColumn;
+					justify-content: flex-start;
+					align-items: flex-start;
+					p,input,textarea { width: 100%; margin: 0; text-align: left;}
+				}
+				align-items: center;
+			}
+		>p { text-align: right;}
 		}
 	}
 	.tableSection {

@@ -121,6 +121,8 @@ section {
   flex-direction: column;
 }
 body {
+  max-width: 80rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background-color: #222;
@@ -138,6 +140,9 @@ body footer,
 body nav > a.navCurrent {
   background-color: #444;
 }
+body nav > a.navCurrent {
+  border-bottom: 0.1rem solid #444;
+}
 body a,
 body p,
 body li,
@@ -145,6 +150,9 @@ body th,
 body td {
   font-size: 1.6rem;
   color: #ccc;
+}
+body p:not(:nth-last-child(1)) {
+  margin-bottom: 1rem;
 }
 body a {
   text-decoration: none;
@@ -156,8 +164,10 @@ body h1 {
 }
 body h2 {
   font-size: 2rem;
-  border-bottom: 0.1rem dashed #ccc;
-  /* vscode doesnt' like #spaces[sm] here */
+}
+body h3 {
+  font-size: 2rem;
+  font-weight: lighter;
 }
 body h1,
 body h2 {
@@ -168,10 +178,11 @@ body h2 {
 body button {
   outline: none;
   border: 0;
-  margin: 0.5rem 0;
+  margin: 1rem 0 0 0;
   color: #ccc;
   background-color: #333;
   font-family: 'Courier New', Courier, monospace;
+  border-left: 0.1rem solid #bbb;
 }
 body button:focus,
 body button:hover {
@@ -203,6 +214,9 @@ body header,
 body nav > a {
   border-left: 0.1rem solid #bbb;
 }
+body footer {
+  text-align: right;
+}
 body nav {
   display: flex;
   flex-direction: row;
@@ -221,21 +235,28 @@ body nav > .navCurrent:hover {
 }
 body nav > a,
 body button {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #333;
 }
 body nav > a {
   margin-left: 0.5rem;
+  border: 0.1rem solid #333;
 }
 body header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-body header img {
+body img {
   width: 20rem;
+  filter: grayscale(100%);
+  transition: filter 1s;
+}
+body img:hover {
+  filter: unset;
 }
 body section table {
+  border-left: 0.1rem dashed #bbb;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -244,13 +265,92 @@ body section table th {
   font-weight: bold;
   text-align: left;
 }
+body section table td,
+body section table th {
+  padding: 0.1rem;
+  padding-left: 1rem;
+}
 body section ol,
 body section ul {
   list-style: none;
+  border-left: 0.1rem dashed #bbb;
 }
-body section li:nth-child(odd),
+body section li {
+  padding: 0.1rem;
+  padding-left: 1rem;
+}
+body section li:nth-child(even),
 body section table > tbody > tr:nth-child(odd) {
   background-color: #333;
+}
+body section .gallery {
+  border-left: 0.1rem solid #ccc;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+body section .gallery > .galleryItem {
+  max-width: 20rem;
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+body section .gallery > .galleryItem:hover h3 {
+  font-weight: bold;
+}
+body section form input,
+body section form textarea {
+  background-color: #333;
+  color: #ddd;
+  padding: 0.5rem;
+  outline: none;
+  border: 0.1rem solid #bbb;
+}
+body section form input:focus,
+body section form textarea:focus {
+  border: 0.1rem dashed #8E7;
+}
+body section form label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body section form label:nth-child(1) {
+  margin-bottom: 1rem;
+}
+body section form label p {
+  width: 30%;
+  text-align: right;
+}
+body section form label input,
+body section form label textarea {
+  width: 70%;
+  margin-left: 1rem;
+}
+body section form label textarea {
+  height: 12rem;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body section form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  body section form label p,
+  body section form label input,
+  body section form label textarea {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+}
+body section form > p {
+  text-align: right;
 }
 body .tableSection {
   overflow-x: auto;
