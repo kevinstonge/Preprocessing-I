@@ -54,7 +54,7 @@ body {
 		color: #colors[fg1]; 
 		background-color: #colors[bg1]; 
 		font-family: #fonts[f1];
-		border-left: #spaces[sm] solid #colors[fg0];
+		.leftBorder;
 		&:focus,&:hover {
 			outline: #spaces[sm] dashed #colors[em0];
 			font-weight: bold;
@@ -75,7 +75,7 @@ body {
 		}
 	}
 	footer,header,nav>a {
-		border-left: #spaces[sm] solid #colors[fg0];
+		.leftBorder;
 	}
 	footer { text-align: right; }
 	nav {
@@ -83,6 +83,12 @@ body {
 		flex-direction: row;
 		justify-content: flex-end;
 		padding: 0;
+		>a {
+			margin-left: #spaces[med];
+			margin-left: #spaces[med];
+			border: #spaces[sm] solid #colors[bg1];
+			.leftBorder;
+		}
 		>a:hover:not(.navCurrent) {
 			font-weight: bold;
 		}
@@ -98,10 +104,6 @@ body {
 		padding: #spaces[med] #spaces[lg];
 		background-color: #colors[bg1];
 	}
-	nav>a { 
-		margin-left: #spaces[med];
-		border: #spaces[sm] solid #colors[bg1]
-	}
 	header { 
 		.flexColumn;
 		align-items: flex-start;
@@ -116,7 +118,7 @@ body {
 	}
 	section {
 		table {
-			border-left: #spaces[sm] dashed #colors[fg0];
+			.leftBorder;
 			width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -131,7 +133,7 @@ body {
 		}
 		ol,ul {
 			list-style: none;
-			border-left: #spaces[sm] dashed #colors[fg0];
+			.leftBorder
 		}
 		li {
 			padding: #spaces[sm];
@@ -141,7 +143,7 @@ body {
 			background-color: #colors[bg1];
 		}
 		.gallery {
-			border-left: #spaces[sm] solid #colors[fg1];
+			.leftBorder;
 			padding: #spaces[sm];
 			.flexRow;
 			justify-content: space-evenly;

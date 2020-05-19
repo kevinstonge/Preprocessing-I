@@ -120,6 +120,9 @@ section {
   display: flex;
   flex-direction: column;
 }
+.leftBorder {
+  border-left: 0.1rem solid #bbb;
+}
 body {
   max-width: 80rem;
   margin: 0 auto;
@@ -223,6 +226,11 @@ body nav {
   justify-content: flex-end;
   padding: 0;
 }
+body nav > a {
+  margin-left: 0.5rem;
+  border: 0.1rem solid #333;
+  border-left: 0.1rem solid #bbb;
+}
 body nav > a:hover:not(.navCurrent) {
   font-weight: bold;
 }
@@ -238,10 +246,6 @@ body button {
   padding: 0.5rem 1rem;
   background-color: #333;
 }
-body nav > a {
-  margin-left: 0.5rem;
-  border: 0.1rem solid #333;
-}
 body header {
   display: flex;
   flex-direction: column;
@@ -249,14 +253,14 @@ body header {
 }
 body img {
   width: 20rem;
-  filter: grayscale(100%);
   transition: filter 1s;
+  filter: grayscale(100%);
 }
 body img:hover {
   filter: unset;
 }
 body section table {
-  border-left: 0.1rem dashed #bbb;
+  border-left: 0.1rem solid #bbb;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -273,7 +277,7 @@ body section table th {
 body section ol,
 body section ul {
   list-style: none;
-  border-left: 0.1rem dashed #bbb;
+  border-left: 0.1rem solid #bbb;
 }
 body section li {
   padding: 0.1rem;
@@ -284,7 +288,7 @@ body section table > tbody > tr:nth-child(odd) {
   background-color: #333;
 }
 body section .gallery {
-  border-left: 0.1rem solid #ccc;
+  border-left: 0.1rem solid #bbb;
   padding: 0.1rem;
   display: flex;
   flex-direction: row;

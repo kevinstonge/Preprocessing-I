@@ -6,3 +6,6 @@
   display: flex;
   flex-direction: column;
 }
+.leftBorder {
+  border-left: 0.1rem solid;
+}
