@@ -187,9 +187,10 @@ body button {
   font-family: 'Courier New', Courier, monospace;
   border-left: 0.1rem solid #bbb;
 }
-body button:focus,
-body button:hover {
+body button:focus {
   outline: 0.1rem dashed #8E7;
+}
+body button:hover {
   font-weight: bold;
 }
 body .flexRowDesktop {
