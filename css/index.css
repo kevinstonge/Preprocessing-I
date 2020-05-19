@@ -181,8 +181,7 @@ body h2 {
 body button {
   outline: none;
   border: 0;
-  margin: 1rem 0 0 0;
-  color: #ccc;
+  margin: 0;
   background-color: #333;
   font-family: 'Courier New', Courier, monospace;
   border-left: 0.1rem solid #bbb;
@@ -238,14 +237,26 @@ body nav > a:hover:not(.navCurrent) {
 body nav > a:focus {
   font-weight: bold;
   border: 0.1rem dashed #8E7;
+  color: #B8F;
 }
 body nav > .navCurrent:hover {
   cursor: default;
+  color: #ddd;
 }
 body nav > a,
 body button {
   padding: 0.5rem 1rem;
   background-color: #333;
+}
+body a,
+body button {
+  color: #ddd;
+}
+body a:hover,
+body button:hover,
+body a:focus,
+body button:focus {
+  color: #B8F;
 }
 body header {
   display: flex;

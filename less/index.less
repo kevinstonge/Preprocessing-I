@@ -50,8 +50,7 @@ body {
 	button { 
 		outline: none; 
 		border: 0; 
-		margin: 1rem 0 0 0; 
-		color: #colors[fg1]; 
+		margin: 0; 
 		background-color: #colors[bg1]; 
 		font-family: #fonts[f1];
 		.leftBorder;
@@ -96,15 +95,23 @@ body {
 		}
 		>a:focus {
 			font-weight: bold;
-			border: #spaces[sm] dashed #colors[em0];	
+			border: #spaces[sm] dashed #colors[em0];
+			color: #colors[em1];	
 		}
 		>.navCurrent:hover {
 			cursor: default;
+			color: #colors[fg2];
 		}
 	}
 	nav>a, button {
 		padding: #spaces[med] #spaces[lg];
 		background-color: #colors[bg1];
+	}
+	a, button {
+		color: #colors[fg2];
+	}
+	a:hover, button:hover, a:focus, button:focus {
+		color:#colors[em1];
 	}
 	header { 
 		.flexColumn;
