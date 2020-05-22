@@ -10,7 +10,7 @@
 body {
 	max-width: 80rem;
 	margin: 0 auto;
-	.flexColumn;
+	.flexColumn();
 	background-color: #colors[bg0];
 	padding: #spaces[lg];
 	font-family: #fonts[f1];
@@ -53,7 +53,7 @@ body {
 		margin: 0; 
 		background-color: #colors[bg1]; 
 		font-family: #fonts[f1];
-		.leftBorder;
+		.leftBorder();
 		&:focus {
 			outline: #spaces[sm] dashed #colors[em0];
 		}
@@ -62,10 +62,10 @@ body {
 		}
 	}
 	.flexRowDesktop {
-		.flexRow;
+		.flexRow();
 		justify-content: stretch;
 		@media (max-width: calc(50rem * 0.625)) {
-			.flexColumn;
+			.flexColumn();
 			justify-content: flex-start;
 		}
 		>section {
@@ -76,7 +76,7 @@ body {
 		}
 	}
 	footer,header,nav>a {
-		.leftBorder;
+		.leftBorder();
 	}
 	footer { text-align: right; }
 	nav {
@@ -88,7 +88,7 @@ body {
 			margin-left: #spaces[med];
 			margin-left: #spaces[med];
 			border: #spaces[sm] solid #colors[bg1];
-			.leftBorder;
+			.leftBorder();
 		}
 		>a:hover:not(.navCurrent) {
 			font-weight: bold;
@@ -115,7 +115,7 @@ body {
 		color:#colors[em1];
 	}
 	header { 
-		.flexColumn;
+		.flexColumn();
 		align-items: flex-start;
 	}
 	img {
@@ -128,7 +128,7 @@ body {
 	}
 	section {
 		table {
-			.leftBorder;
+			.leftBorder();
 			width: 100%;
 			border-collapse: collapse;
 			border-spacing: 0;
@@ -143,7 +143,7 @@ body {
 		}
 		ol,ul {
 			list-style: none;
-			.leftBorder
+			.leftBorder()
 		}
 		li {
 			padding: #spaces[sm];
@@ -153,9 +153,9 @@ body {
 			background-color: #colors[bg1];
 		}
 		.gallery {
-			.leftBorder;
+			.leftBorder();
 			padding: #spaces[sm];
-			.flexRow;
+			.flexRow();
 			justify-content: space-evenly;
 			flex-wrap: wrap;
 			align-items: center;
@@ -163,11 +163,10 @@ body {
 				max-width: 20rem;
 				text-align: center;
 				padding: #spaces[med];
-				.flexColumn;
+				.flexColumn();
 				&:hover {
 					h3 { font-weight: bold; }
 				}
-
 			}
 		}
 		form {
@@ -186,9 +185,9 @@ body {
 				p { width: 30%; text-align: right; }
 				input,textarea { width: 70%; margin-left: 1rem;}
 				textarea { height: 12rem; }
-				.flexRow;
+				.flexRow();
 				@media (max-width: calc(50rem * 0.625)) {
-					.flexColumn;
+					.flexColumn();
 					justify-content: flex-start;
 					align-items: flex-start;
 					p,input,textarea { width: 100%; margin: 0; text-align: left;}

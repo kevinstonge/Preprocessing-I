@@ -112,17 +112,6 @@ section {
   padding: 1rem;
   /* move */
 }
-.flexRow {
-  display: flex;
-  flex-direction: row;
-}
-.flexColumn {
-  display: flex;
-  flex-direction: column;
-}
-.leftBorder {
-  border-left: 0.1rem solid #bbb;
-}
 body {
   max-width: 80rem;
   margin: 0 auto;
