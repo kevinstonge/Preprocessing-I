@@ -1,1 +1,363 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+* {
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: inline-block;
+  padding: 1rem;
+  /* move */
+}
+body {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  color: #ccc;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body {
+    padding: 0;
+  }
+}
+body header,
+body footer,
+body nav > a.navCurrent {
+  background-color: #444;
+}
+body nav > a.navCurrent {
+  border-bottom: 0.1rem solid #444;
+}
+body a,
+body p,
+body li,
+body th,
+body td {
+  font-size: 1.6rem;
+  color: #ccc;
+}
+body p:not(:nth-last-child(1)) {
+  margin-bottom: 1rem;
+}
+body a {
+  text-decoration: none;
+}
+body h1 {
+  font-size: 2.2rem;
+  color: #8E7;
+  margin-top: 1rem;
+}
+body h2 {
+  font-size: 2rem;
+}
+body h3 {
+  font-size: 2rem;
+  font-weight: lighter;
+}
+body h1,
+body h2 {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+body button {
+  outline: none;
+  border: 0;
+  margin: 0;
+  background-color: #333;
+  font-family: 'Courier New', Courier, monospace;
+  border-left: 0.1rem solid #bbb;
+}
+body button:focus {
+  outline: 0.1rem dashed #8E7;
+}
+body button:hover {
+  font-weight: bold;
+}
+body .flexRowDesktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body .flexRowDesktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+body .flexRowDesktop > section {
+  width: 50%;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body .flexRowDesktop > section {
+    width: 100%;
+  }
+}
+body footer,
+body header,
+body nav > a {
+  border-left: 0.1rem solid #bbb;
+}
+body footer {
+  text-align: right;
+}
+body nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0;
+}
+body nav > a {
+  margin-left: 0.5rem;
+  border: 0.1rem solid #333;
+  border-left: 0.1rem solid #bbb;
+}
+body nav > a:hover:not(.navCurrent) {
+  font-weight: bold;
+}
+body nav > a:focus {
+  font-weight: bold;
+  border: 0.1rem dashed #8E7;
+  color: #B8F;
+}
+body nav > .navCurrent:hover {
+  cursor: default;
+  color: #ddd;
+}
+body nav > a,
+body button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+}
+body a,
+body button {
+  color: #ddd;
+  transition: color 1s;
+}
+body a:hover,
+body button:hover,
+body a:focus,
+body button:focus {
+  color: #B8F;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+body img {
+  width: 20rem;
+  transition: filter 1s;
+  filter: grayscale(100%);
+}
+body img:hover {
+  filter: unset;
+}
+body section table {
+  border-left: 0.1rem solid #bbb;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body section table th {
+  font-weight: bold;
+  text-align: left;
+}
+body section table td,
+body section table th {
+  padding: 0.1rem;
+  padding-left: 1rem;
+}
+body section ol,
+body section ul {
+  list-style: none;
+  border-left: 0.1rem solid #bbb;
+}
+body section li {
+  padding: 0.1rem;
+  padding-left: 1rem;
+}
+body section li:nth-child(even),
+body section table > tbody > tr:nth-child(odd) {
+  background-color: #333;
+}
+body section .gallery {
+  border-left: 0.1rem solid #bbb;
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+body section .gallery > .galleryItem {
+  max-width: 20rem;
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+body section .gallery > .galleryItem:hover h3 {
+  font-weight: bold;
+}
+body section form input,
+body section form textarea {
+  background-color: #333;
+  color: #ddd;
+  padding: 0.5rem;
+  outline: none;
+  border: 0.1rem solid #bbb;
+}
+body section form input:focus,
+body section form textarea:focus {
+  border: 0.1rem dashed #8E7;
+}
+body section form label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body section form label:nth-child(1) {
+  margin-bottom: 1rem;
+}
+body section form label p {
+  width: 30%;
+  text-align: right;
+}
+body section form label input,
+body section form label textarea {
+  width: 70%;
+  margin-left: 1rem;
+}
+body section form label textarea {
+  height: 12rem;
+}
+@media (max-width: calc(50rem * 0.625)) {
+  body section form label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  body section form label p,
+  body section form label input,
+  body section form label textarea {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+}
+body section form > p {
+  text-align: right;
+}
+body .tableSection {
+  overflow-x: auto;
+}

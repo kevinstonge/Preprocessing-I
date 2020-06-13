@@ -3,17 +3,77 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <title>My Resume</title>
-
+  <title>Kevin St.Onge - Full-Stack Web Developer (Resume)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
-
+  
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
 
 <body>
-  <h1>My Resume</h1>
+
+  <nav>
+    <a href="#" class="navCurrent">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <img src="assets/headerImg.png">
+    <h1>Kevin St.Onge</h1>
+    <h2>Full-Stack Web Developer</h2>
+    <p>I love to solve problems</p>
+    <button onclick="window.location.href='contact.html';">Contact me!</button>
+  </header>
+
+  <div class="flexRowDesktop">
+    <section>
+      <h2>Intro</h2>
+      <p>Hi! My name is Kevin. I'm currently learning lots of different technologies involved in web development. After working as an educator for almost twenty years, I'm ready for a career change into technology and I can't wait to start working for you!</p>
+    </section>
+    <section>
+      <h2>Skills</h2>
+      <div id="skillsList">
+        <ul>
+          <li>HTML5 (semantic, accessible)</li>
+          <li>CSS3 (css less)</li>
+          <li>JavaScript</li>
+          <li>ReactJS</li>
+          <li>NodeJS</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="tableSection">
+    <h2>Work History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Company</th><th>Title</th><th>Tech Used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google</td><td>CEO</td><td>JavaScript</td>
+        </tr>
+        <tr>
+          <td>Amazon</td><td>CFO</td><td>AWS</td>
+        </tr>
+        <tr>
+          <td>Netflix</td><td>Janitor</td><td>Soap</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer>
+    <p>&copy;2020 Kevin St.Onge</p>
+  </footer>
+    <!-- the empty script element for some reason prevents chrome from running the css transitions on page load  -->
+    <!-- https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load -->
+    <script> </script>
 </body>
 </html>

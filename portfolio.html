@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Kevin St.Onge - Full-Stack Web Developer (Portfolio)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html" class="navCurrent">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <img src="assets/headerImg.png">
+    <h1>Kevin St.Onge</h1>
+    <h2>Full-Stack Web Developer</h2>
+    <p>like what you see?</p>
+    <button onclick="window.location.href='contact.html';">Contact me!</button>
+  </header>
+
+  <section>
+    <h2>A few things I've built recently</h2>
+    <div class="gallery">
+      <a class="galleryItem" href="https://github.com/kevinstonge/color_tools">
+        <h3>Color Tools</h3>
+        <img src="assets/colorTools.JPG">
+      </a>
+      <a class="galleryItem" href="https://github.com/kevinstonge/SpeakAndSpellMobile">
+        <h3>Speak&Spell</h3>
+        <img src="assets/speakAndSpell.JPG">
+      </a>
+      <a class="galleryItem" href="https://github.com/kevinstonge/ticTacToe">
+        <h3>Tic Tac Toe</h3>
+        <img src="assets/ticTacToe.JPG">
+      </a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy;2020 Kevin St.Onge</p>
+  </footer>
+  <!-- the empty script element for some reason prevents chrome from running the css transitions on page load  -->
+  <!-- https://stackoverflow.com/questions/14389566/stop-css-transition-from-firing-on-page-load -->
+  <script> </script>
+</body>
+</html>
